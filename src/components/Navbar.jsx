@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import styles from "../styles/navbar.module.css";
+import styles from "../styles/Navbar.module.css";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
