@@ -1,0 +1,150 @@
+/* Base Styles */
+.main {
+    position: relative;
+    top: 62px;
+    padding-top: 6rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6f7ff;
+    text-align: left;
+    min-height: 100vh; /* Full height */
+}
+
+.content {
+    max-width: 50%;
+    padding-right: 2rem;
+}
+
+.headerText {
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    font-size: 2.5rem;
+    color: rgb(3, 224, 253);
+    font-weight: bold;
+    display: inline-block;
+}
+
+.text2 {
+    font-size: 2.5rem;
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    animation: typing 4s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+
+
+.description {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.contact {
+    border-radius: 25px;
+    background-color: rgb(3, 224, 253);
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact:hover {
+    background-color: rgb(1, 175, 202);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.images img {
+    max-width: 100%;
+    height: auto;
+   
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 4rem ;
+        padding: 2rem;
+    }
+
+    .content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .headerText {
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .images {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding-top: 4rem;
+        padding: 3rem;
+    }
+
+    .text, .text2 {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .contact {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        
+        padding: 1rem;
+    }
+
+    .text, .text2 {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .contact {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+}
