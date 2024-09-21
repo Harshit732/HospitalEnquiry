@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
-import styles from '../styles/Contact.module.css'; 
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import styles from "../styles/Contact.module.css";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    Service: '',
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    Address: "",
+    Service: "",
   });
 
   const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    Service: '',
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    Address: "",
+    Service: "",
   });
 
   const navigate = useNavigate(); // Use navigate for redirection
@@ -28,23 +32,27 @@ function Contact() {
     let formErrors = {};
     let isValid = true;
 
-    if (!formData.name) {
-      formErrors.name = 'Name is required';
+    if (!formData.firstname) {
+      formErrors.name = "First name is required";
+      isValid = false;
+    }
+    if (!formData.lastname) {
+      formErrors.name = "Last name is required";
       isValid = false;
     }
 
     if (!formData.email) {
-      formErrors.email = 'Email is required';
+      formErrors.email = "Email is required";
       isValid = false;
-    } 
+    }
 
     if (!formData.phone) {
-      formErrors.phone = 'Phone number is required';
+      formErrors.phone = "Phone number is required";
       isValid = false;
     }
 
     if (!formData.Service) {
-      formErrors.Service = 'Service is required';
+      formErrors.Service = "Consultant is required";
       isValid = false;
     }
 
@@ -56,34 +64,55 @@ function Contact() {
     e.preventDefault();
 
     if (validateForm()) {
-      alert('Form submitted successfully!');
+      alert("Form submitted successfully!");
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        Service: '',
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        Address: "",
+        Service: "",
       });
       setErrors({});
-      navigate('/'); // Redirect to home if form is valid
+      navigate("/"); 
     }
   };
 
   return (
-    <div style={{padding: "5rem 4rem"}}>
+    <div style={{ padding: "2rem 4rem" }}>
       <div className={styles.formContainer}>
-        <h2>Contact Us</h2>
+        <h2 style={{textAlign:"center", fontSize: "3rem"}}>Contact Us</h2>
         <form onSubmit={handleSubmit} className={styles.contactForm}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            {errors.name && <span className={styles.error}>{errors.name}</span>}
+          <div className={styles.name}>
+            <div className={styles.formGroup}>
+              <label htmlFor="firstname">First Name</label>
+              <input
+                type="text"
+                id="firstname"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              {errors.name && (
+                <span className={styles.error}>{errors.name}</span>
+              )}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="lastname">Last Name</label>
+              <input
+                type="text"
+                id="lastname"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              {errors.name && (
+                <span className={styles.error}>{errors.name}</span>
+              )}
+            </div>
           </div>
+
+          <div className={styles.name}>
           <div className={styles.formGroup}>
             <label htmlFor="email">Email</label>
             <input
@@ -93,7 +122,9 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && <span className={styles.error}>{errors.email}</span>}
+            {errors.email && (
+              <span className={styles.error}>{errors.email}</span>
+            )}
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="phone">Phone</label>
@@ -104,23 +135,43 @@ function Contact() {
               value={formData.phone}
               onChange={handleChange}
             />
-            {errors.phone && <span className={styles.error}>{errors.phone}</span>}
+            {errors.phone && (
+              <span className={styles.error}>{errors.phone}</span>
+            )}
           </div>
+          </div>
+
           <div className={styles.formGroup}>
-            <label htmlFor="Service">Service Needed</label>
+            <label htmlFor="Address">Address</label>
+            <input
+              id="Address"
+              name="Address"
+              value={formData.Service}
+              onChange={handleChange}
+            />
+            {errors.Service && (
+              <span className={styles.error}>{errors.Service}</span>
+            )}
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="Service">Consultant Needed</label>
             <input
               id="Service"
               name="Service"
               value={formData.Service}
               onChange={handleChange}
             />
-            {errors.Service && <span className={styles.error}>{errors.Service}</span>}
+            {errors.Service && (
+              <span className={styles.error}>{errors.Service}</span>
+            )}
           </div>
-          
+
+
+
           <button type="submit" className={styles.submitButton}>
             Submit
           </button>
-          
         </form>
       </div>
     </div>

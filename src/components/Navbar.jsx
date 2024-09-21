@@ -28,7 +28,11 @@ const Navbar = () => {
                 
               </ScrollLink>
               </li>
-              
+              <li>
+              <ScrollLink to="about-section" smooth={true} duration={500}>
+                About Us
+              </ScrollLink>
+            </li>
             
 
             <li>
@@ -37,9 +41,10 @@ const Navbar = () => {
               </ScrollLink>
             </li>
 
+            
             <li>
-              <ScrollLink to="about-section" smooth={true} duration={500}>
-                About Us
+              <ScrollLink to="doctors-section" smooth={true} duration={500}>
+                Staff
               </ScrollLink>
             </li>
             

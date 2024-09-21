@@ -1,17 +1,30 @@
-.formContainer {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: #e6f7ff; /* Softer background similar to previous sections */
+.formContainer { 
+    
+  padding: 2.5rem 15rem;
+  background: #e6f7ff; 
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   transition: box-shadow 0.3s ease;
 }
 
 .contactForm {
+  
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  
+
+}
+.name{
+  width: 100%;
+  display: flex;
+  gap: 4rem;
+  flex: 1;
+  justify-content: space-between;
+  
+}
+.name .formGroup{
+  width: 50%;
 }
 
 .formGroup label {
@@ -19,7 +32,7 @@
   margin-bottom: 0.5rem;
   font-weight: bold;
   font-size: 1rem;
-  color: #333; /* Darker label color */
+  color: #333;
 }
 
 .formGroup input,
@@ -37,7 +50,7 @@
 .formGroup input:focus,
 .formGroup textarea:focus {
   border-color: rgb(3, 224, 253);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add focus effect */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
   outline: none;
 }
 
@@ -48,8 +61,10 @@
 }
 
 .submitButton {
+  
+  width: 25%;
   padding: 0.75rem;
-  background-color: rgb(3, 224, 253); /* Matching accent color */
+  background-color:  #003366;
   color: white;
   border: none;
   border-radius: 25px;
@@ -58,14 +73,16 @@
   font-weight: bold;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  margin: 0 auto; 
+  display: block;
 }
 
 .submitButton:hover {
   background-color: rgb(1, 175, 202);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Subtle hover shadow */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .formContainer {
       padding: 1.5rem;

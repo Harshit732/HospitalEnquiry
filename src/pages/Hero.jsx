@@ -20,9 +20,14 @@ function Hero() {
             outreach, we strive to promote healthier lifestyles and improve
             access to medical services.
           </p>
-          <Link to="/contact">
-            <button className={styles.contact}>Contact Us</button>
-          </Link>
+          <div>
+            <Link to="/contact">
+              <button className={styles.contact}>Contact Us</button>
+            </Link>
+            <Link to="/appointment">
+              <button className={styles.appointment}>Make an Appointment</button>
+            </Link>
+          </div>
         </div>
         <div className={styles.images}>
           <img src={doctors} alt="Doctors" />
